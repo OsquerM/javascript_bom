@@ -1,20 +1,35 @@
 function crearVentana() {
-    miVentana = window.open("", "", "width=1280,height=720,resizable=yes,scrollbars=yes");
+    const miVentana = window.open("", "", "width=1280,height=720,resizable=yes,scrollbars=yes");
 
     // Contenido principal
     miVentana.document.write("<h1>Mi ventana 1280x720</h1>");
 
-    // Crear botón Maximizar
-    let botonMax = miVentana.document.createElement("button");
-    botonMax.textContent = "Maximizar";
-    
+    // Crear botón Maximizar/Minimizar
+    const botonToggle = miVentana.document.createElement("button");
+    botonToggle.textContent = "Maximizar";
 
     // Añadir botón al body
-    miVentana.document.body.appendChild(botonMax);
+    miVentana.document.body.appendChild(botonToggle);
 
-    // Función para maximizar
-    botonMax.addEventListener("click", () => {
-        miVentana.resizeTo(screen.width, screen.height);
+    // Estado actual de la ventana
+    let maximizada = false;
+    const margin = 50; // margen de 50px
+
+    botonToggle.addEventListener("click", () => {
+        if (!maximizada) {
+            // Maximizar ventana
+            miVentana.resizeTo(screen.width, screen.height);
+            botonToggle.textContent = "Minimizar";
+            maximizada = true;
+        } else {
+            // Minimizar ventana centrada con margen de 50px
+            const ancho = screen.width - margin * 2;
+            const alto = screen.height - margin * 2;
+            miVentana.resizeTo(ancho, alto);
+            miVentana.moveTo(margin, margin); // 50px arriba e izquierda
+            botonToggle.textContent = "Maximizar";
+            maximizada = false;
+        }
     });
 }
 

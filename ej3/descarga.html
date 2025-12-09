@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="descarga.css">
+<title>Descargar Radarsystem</title>
+<style>
+
+</style>
+</head>
+<body>
+    <!-- Logo -->
+    <nav>
+        <img src="imagenes/Google_Chrome-Logo.wine.png" alt="Logo">
+    </nav>
+
+    <!-- Recuadro principal -->
+    <div class="contenedor">
+        <h2 id="titulo"></h2>
+        <p id="infoNavegador"></p>
+
+        <p>Selecciona tu paquete de descarga:</p>
+        <div class="opciones">
+            <label>
+                <input type="radio" name="dispositivo" value="escritorio" checked>
+                Dispositivo de escritorio
+            </label>
+            <label>
+                <input type="radio" name="dispositivo" value="movil">
+                Dispositivo móvil
+            </label>
+        </div>
+
+        <p id="legislacion">Al descargar Radarsystem aceptas la Legislación vigente en tu ubicación</p>
+
+        <button id="botonAceptar">Aceptar e instalar</button>
+    </div>
+
+    <script>
+        // Obtener parámetros de la URL
+        const parametros = new URLSearchParams(window.location.search);
+        const nombreNavegador = parametros.get('navegador') || "Desconocido";
+        const versionNavegador = parametros.get('version') || "desconocida";
+
+        // Mostrar navegador y versión
+        document.getElementById('titulo').textContent = `Descargar Radarsystem para ${nombreNavegador}`;
+        document.getElementById('infoNavegador').textContent = `${nombreNavegador} ${versionNavegador}`;
+
+        // Obtener ubicación del usuario
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((posicion) => {
+                const latitud = posicion.coords.latitude.toFixed(4);
+                const longitud = posicion.coords.longitude.toFixed(4);
+                document.getElementById('legislacion').textContent =
+                    `Al descargar Radarsystem aceptas la Legislación vigente en tu ubicación: ${latitud}, ${longitud}`;
+            }, () => {
+                document.getElementById('legislacion').textContent += " (Ubicación no disponible)";
+            });
+        }
+
+        // Botón aceptar e instalar
+        document.getElementById('botonAceptar').addEventListener('click', () => {
+            const dispositivoSeleccionado = document.querySelector('input[name="dispositivo"]:checked').value;
+            alert(`Instalación iniciada en: ${dispositivoSeleccionado}`);
+        });
+    </script>
+</body>
+</html>

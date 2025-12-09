@@ -1,0 +1,56 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+/* Imagen */
+img#imagenPrincipal {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form#formulario {
+    margin-bottom: 20px;
+}
+
+form#formulario label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+form#formulario input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* Párrafos */
+#parrafos p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Botones */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

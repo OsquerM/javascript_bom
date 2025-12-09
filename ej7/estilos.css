@@ -1,0 +1,54 @@
+/* Tipografía y centrado */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Nivel actual */
+#nivelActual {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* Botones modernizados */
+.botones button {
+    padding: 12px 25px;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #4CAF50, #2E7D32);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.botones button:hover:not(:disabled) {
+    background: linear-gradient(145deg, #66BB6A, #1B5E20);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.botones button:active:not(:disabled) {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.botones button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

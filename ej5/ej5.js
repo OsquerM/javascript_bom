@@ -1,6 +1,6 @@
 // ===== FUNCIONES =====
 
-// 1️⃣ Recuperar el segundo párrafo usando distintos métodos
+// Recuperar el segundo párrafo usando distintos métodos
 function obtenerSegundoParrafo() {
     let parrafosDiv = document.getElementById('parrafos');
 
@@ -17,20 +17,20 @@ function obtenerSegundoParrafo() {
     console.log(p2_byQuerySelectorAll.textContent + " obtenido mediante querySelectorAll");
 }
 
-// 2️⃣ Modificar segundo y tercer párrafo
+// Modificar segundo y tercer párrafo
 function modificar2y3() {
     let parrafos = document.querySelectorAll('#parrafos p');
     if(parrafos[1]) parrafos[1].textContent = "Éste es el nuevo contenido del segundo párrafo";
     if(parrafos[2]) parrafos[2].innerHTML = "Éste es el nuevo contenido del <strong>tercer párrafo</strong>";
 }
 
-// 3️⃣ Eliminar cuarto párrafo
+// Eliminar cuarto párrafo
 function eliminar4() {
     let parrafos = document.querySelectorAll('#parrafos p');
     if(parrafos[3]) parrafos[3].remove();
 }
 
-// 4️⃣ Crear un nuevo párrafo al final
+// Crear un nuevo párrafo al final
 function crearParrafo() {
     let divParrafos = document.getElementById('parrafos');
     let nuevoP = document.createElement('p');
@@ -38,7 +38,7 @@ function crearParrafo() {
     divParrafos.appendChild(nuevoP);
 }
 
-// 5️⃣ Crear párrafo adicional sobre innerHTML y textContent en tercer lugar
+// Crear párrafo adicional sobre innerHTML y textContent en tercer lugar
 function crearParrafoInnerText() {
     let divParrafos = document.getElementById('parrafos');
     let p = document.createElement('p');
@@ -46,19 +46,19 @@ function crearParrafoInnerText() {
     divParrafos.insertBefore(p, divParrafos.children[2]); // Tercer lugar
 }
 
-// 6️⃣ Modificar imagen
+// Modificar imagen
 function modificarImagen() {
     let img = document.getElementById('imagenPrincipal');
     img.src = "https://cdn-icons-png.flaticon.com/512/888/888879.png"; // nueva imagen
 }
 
-// 7️⃣ Modificar formulario
+// Modificar formulario
 function modificarFormulario() {
     let labelNombre = document.querySelector('#formulario label[for="nombre"]');
     if(labelNombre) labelNombre.textContent = "Año de nacimiento:";
 }
 
-// 8️⃣ Usar document.write
+// Usar document.write
 function usarDocumentWrite() {
     document.write("Esto es lo que pasa por usar el método document.write una vez la página se ha cargado");
 }

@@ -4,3 +4,8 @@ function crearVentana() {
 }
 
 document.getElementById("crearVentana").addEventListener("click", crearVentana);
+
+
+
+
+// Terminarlo

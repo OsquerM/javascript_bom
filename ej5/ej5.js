@@ -2,12 +2,10 @@
 
 // Recuperar el segundo párrafo usando distintos métodos
 function obtenerSegundoParrafo() {
-    let parrafosDiv = document.getElementById('parrafos');
-
     let p2_byId = document.getElementsByTagName('p')[1];
     console.log(p2_byId.textContent + " obtenido mediante getElementsByTagName");
 
-    let p2_byClass = document.getElementsByClassName('parrafo')[1]; // no tenemos clase, se podría añadir
+    let p2_byClass = document.getElementsByClassName('parrafo')[1]; 
     console.log(p2_byClass ? p2_byClass.textContent + " obtenido mediante getElementsByClassName" : "No hay clase asignada");
 
     let p2_byQuerySelector = document.querySelector('#parrafos p:nth-of-type(2)');
@@ -16,6 +14,13 @@ function obtenerSegundoParrafo() {
     let p2_byQuerySelectorAll = document.querySelectorAll('#parrafos p')[1];
     console.log(p2_byQuerySelectorAll.textContent + " obtenido mediante querySelectorAll");
 }
+// | Método                              | Cómo busca   | Qué devuelve |
+// | ----------------------------------- | ------------ | ------------ |
+// | `getElementsByTagName('p')`         | Por etiqueta | Varios       |
+// | `getElementsByClassName('parrafo')` | Por clase    | Varios       |
+// | `querySelector()`                   | CSS          | **Uno**      |
+// | `querySelectorAll()`                | CSS          | Varios       |
+
 
 // Modificar segundo y tercer párrafo
 function modificar2y3() {

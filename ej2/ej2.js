@@ -1,6 +1,7 @@
 function crearVentana() {
     const miVentana = window.open("", "", "width=1280,height=720,resizable=yes,scrollbars=yes");
-
+    //resizable=yes permite redimensionar la ventana
+    //scrollbars=yes añade barras de desplazamiento si el contenido es mayor que la ventana
     // Contenido principal
     miVentana.document.write("<h1>Mi ventana 1280x720</h1>");
 

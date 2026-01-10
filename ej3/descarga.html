@@ -45,19 +45,11 @@
         // Mostrar navegador y versión
         document.getElementById('titulo').textContent = `Descargar Radarsystem para ${nombreNavegador}`;
         document.getElementById('infoNavegador').textContent = `${nombreNavegador} ${versionNavegador}`;
-
-        // Obtener ubicación del usuario
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((posicion) => {
-                const latitud = posicion.coords.latitude.toFixed(4);
-                const longitud = posicion.coords.longitude.toFixed(4);
-                document.getElementById('legislacion').textContent =
-                    `Al descargar Radarsystem aceptas la Legislación vigente en tu ubicación: ${latitud}, ${longitud}`;
-            }, () => {
-                document.getElementById('legislacion').textContent += " (Ubicación no disponible)";
-            });
-        }
-
+ 
+        // Texto fijo de legislación (sin geolocalización)
+        document.getElementById('legislacion').textContent =
+            "Al descargar Radarsystem aceptas la Legislación vigente en tu ubicación";
+            
         // Botón aceptar e instalar
         document.getElementById('botonAceptar').addEventListener('click', () => {
             const dispositivoSeleccionado = document.querySelector('input[name="dispositivo"]:checked').value;

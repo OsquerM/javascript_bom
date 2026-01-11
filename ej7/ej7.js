@@ -34,6 +34,11 @@ function irSiguienteNivel() {
         actualizarNivel(nuevoNivel);
     }
 }
+//PushState:
+// Cambia la URL en la barra del navegador (ej. ?nivel=3)
+// Guarda un estado que puedes recuperar con popstate
+// No recarga la página (eso es lo que evita la recarga)
+// Permite que los botones Atrás / Adelante funcionen con tu estado
 
 // Obtener nivel actual de la URL o de la página
 function getNivelActual() {
@@ -41,13 +46,15 @@ function getNivelActual() {
     const nivel = parseInt(params.get('nivel'));
     return isNaN(nivel) ? 1 : nivel;
 }
+// Esta función obtiene el nivel actual desde la URL y devuelve un valor por defecto si no es válido.
 
 // Manejar eventos de retroceso/avance del navegador
 window.addEventListener('popstate', (evento) => {
     const nivel = evento.state?.nivel || 1;
     actualizarNivel(nivel);
 });
-
+// El evento popstate permite reaccionar a la navegación del historial
+// y restaurar el estado de la aplicación sin recargar la página.
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     const nivelInicial = getNivelActual();
